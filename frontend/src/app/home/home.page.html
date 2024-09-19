@@ -14,7 +14,13 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <p>Hola holita</p>
+      <ion-button>Hacer algo</ion-button>
+      <ion-list>
+        <ion-item *ngFor="let s of shops">
+          <p>direccion: {{s.address}}</p>
+          <p>telefono: {{s.telephone}}</p>
+        </ion-item>
+      </ion-list>
   </div>
 </ion-content>

@@ -3,14 +3,14 @@ const Shop = db.shops;
 
 exports.create = (req, res) => {
 
-    if (!req.body.brand){
+    /*if (!req.body.brand){
         res.status(400).send({
             message: "Content can not be empty!"
         });
         return;
-    }
+    }*/
 
-    const Shop = {
+    const shop = {
         address: req.body.address,
         telephone: req.body.telephone
     };
@@ -49,5 +49,10 @@ exports.update = (req, res) => {
 }
 
 exports.delete = (req, res) => {
+    const id = req.params.id;
 
+    Shop.destroy({ where: { id: id}}).then(() => {
+        console.log("Entry erased");
+        res.send({message: "Erased"});
+    })
 }

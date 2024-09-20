@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShopService } from '../services/shop.service';
 
 @Component({
   selector: 'app-shops',
@@ -7,22 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopsPage implements OnInit {
 
-  shops: Array<any> = [
-    {
-      address: "c/ añaña",
-      telephone: "654654546546"
-    },{
-      address: "c/ bebebeb",
-      telephone: "68478435"
-    },{
-      address: "c/ dededed",
-      telephone: "687346"
-    }
-  ]
+  shops: any = []
   
-  constructor() { }
+  constructor(private shopService: ShopService) { }
 
   ngOnInit() {
+    this.getAllShops();
   }
 
+  getAllShops() {
+    this.shopService.getShops().subscribe(response => {
+      this.shops = response;
+    });
+  }
 }

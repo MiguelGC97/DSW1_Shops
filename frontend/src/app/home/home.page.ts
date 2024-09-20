@@ -10,7 +10,7 @@ export class HomePage {
 
   
 
-  shops: Array<any> = [
+  shops: any = [
     {
       address: "c/ añaña",
       telephone: "654654546546"

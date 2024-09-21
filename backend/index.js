@@ -13,6 +13,12 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
+const db = require("./models");
+
+db.sequelize.sync({ force: false }).then(() => {
+    console.log("Drop a re-sync db.");
+});
+
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to the shop." });
 });

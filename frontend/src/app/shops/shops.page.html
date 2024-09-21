@@ -11,10 +11,12 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list>
-    <ion-item *ngFor="let s of shops">
-      <p>direccion: {{s.address}}</p>
-      <p>telefono: {{s.telephone}}</p>
-    </ion-item>
-  </ion-list>
+  <div id="container">
+    <ion-list>
+      <ion-item *ngFor="let s of shops">
+        <p class="red-text">direccion: {{s.address}}</p>
+        <p class="red-text">telefono: {{s.telephone}}</p>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>

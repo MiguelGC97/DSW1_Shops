@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ShopService {
 
-  endpoint = `http:localhost:8080/api/shops`;
+  endpoint = `http://localhost:8080/api/shops`;
 
   constructor(private httpClient: HttpClient) { }
 

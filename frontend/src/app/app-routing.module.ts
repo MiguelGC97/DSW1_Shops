@@ -10,10 +10,15 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'shops',
     loadChildren: () => import('./shops/shops.module').then( m => m.ShopsPageModule)
+  },  {
+    path: 'shop-form',
+    loadChildren: () => import('./shop-form/shop-form.module').then( m => m.ShopFormPageModule)
   },
+
 
 ];
 

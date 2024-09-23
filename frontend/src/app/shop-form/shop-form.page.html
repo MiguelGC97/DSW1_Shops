@@ -10,4 +10,26 @@
       <ion-title size="large">shopForm</ion-title>
     </ion-toolbar>
   </ion-header>
+  <form [formGroup]="shopForm" (ngSubmit)="createShop()">
+
+    <ion-item>
+      <ion-label position="floating">Address</ion-label>
+      <ion-input formControlName="address" type="text"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('address')?.hasError('required') && getFormControl('address')?.touched">
+      This field is required.
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="floating">Telephone</ion-label>
+      <ion-input formControlName="telephone" type="text"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('telephone')?.hasError('required') && getFormControl('telephone')?.touched">
+      This field is required.
+    </ion-note>
+
+    <!-- Botón de Enviar -->
+     <ion-button expand="full" type="sumbit" [disabled]="!shopForm.valid">Crear</ion-button>
+
+  </form>
 </ion-content>

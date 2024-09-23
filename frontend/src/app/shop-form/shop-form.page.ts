@@ -29,7 +29,7 @@ export class ShopFormPage implements OnInit {
     if (this.shopForm.valid) {
       console.log('Valid form:', this.shopForm.value);
       this.shopService.create(this.shopForm.value).subscribe(response => {
-        this.route.navigateByUrl("/shop");
+        this.route.navigateByUrl("/shops");
       })
     } else {
       console.log('Form not valid');

@@ -8,21 +8,6 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  
-
-  shops: any = [
-    {
-      address: "c/ añaña",
-      telephone: "654654546546"
-    },{
-      address: "c/ bebebeb",
-      telephone: "68478435"
-    },{
-      address: "c/ dededed",
-      telephone: "687346"
-    }
-  ]
-
   constructor(private router: Router) { }
 
   gotoShops() {

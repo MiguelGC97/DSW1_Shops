@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from '../services/shop.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shops',
@@ -10,7 +11,8 @@ export class ShopsPage implements OnInit {
 
   shops: any = []
   
-  constructor(private shopService: ShopService) { }
+  constructor(private shopService: ShopService, 
+              private router: Router) { }
 
   ngOnInit() {
     this.getAllShops();
@@ -20,5 +22,9 @@ export class ShopsPage implements OnInit {
     this.shopService.getShops().subscribe(response => {
       this.shops = response;
     });
+  }
+
+  gotoShopForm() {
+    this.router.navigateByUrl("/shop-form");
   }
 }

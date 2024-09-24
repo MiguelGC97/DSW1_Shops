@@ -16,6 +16,7 @@
       <ion-item *ngFor="let s of shops">
         <p class="red-text">direccion: {{s.address}}</p>
         <p class="red-text">telefono: {{s.telephone}}</p>
+        <ion-button (click)="deleteShop(s.id)">Delete</ion-button>
       </ion-item>
     </ion-list>
   </div>

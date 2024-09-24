@@ -27,4 +27,12 @@ export class ShopsPage implements OnInit {
   gotoShopForm() {
     this.router.navigateByUrl("/shop-form");
   }
+
+  deleteShop(id: any) {
+    this.shopService.delete(id).subscribe(response => {
+      this.getAllShops(); //Para que refresque la página
+    })
+  }
+
+  
 }

@@ -25,6 +25,10 @@ export class ShopFormPage implements OnInit {
   ngOnInit() {
   }
 
+  getFormControl(field: string) {
+    return this.shopForm.get(field);
+  }
+
   createShop() {
     if (this.shopForm.valid) {
       console.log('Valid form:', this.shopForm.value);
@@ -35,8 +39,5 @@ export class ShopFormPage implements OnInit {
       console.log('Form not valid');
     }
   }
-
-  getFormControl(field: string) {
-    return this.shopForm.get(field);
-  }
+  
 }

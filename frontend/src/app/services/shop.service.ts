@@ -29,4 +29,12 @@ export class ShopService {
 
     return this.httpClient.post(this.endpoint, body.toString(), { headers });
   }
+
+  delete(id: any){
+    return this.httpClient.delete(`${this.endpoint}/${id}`);
+  }
+
+  update(id: any, updatedData: any){
+    return this.httpClient.put(`${this.endpoint}/${id}`, updatedData);
+  }
 }

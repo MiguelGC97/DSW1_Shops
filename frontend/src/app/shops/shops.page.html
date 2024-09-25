@@ -16,7 +16,27 @@
       <ion-item *ngFor="let s of shops">
         <p class="red-text">direccion: {{s.address}}</p>
         <p class="red-text">telefono: {{s.telephone}}</p>
+
+        <!-- Botón para borrar -->
         <ion-button (click)="deleteShop(s.id)">Delete</ion-button>
+
+        <!-- Botón para editar -->
+        <ion-button *ngIf="editShopId !== s.id" (click)="enableEdit(s.id, s)">Edit</ion-button>
+
+        <!-- Formulario de edición, visible solo si estamos editando esta tienda -->
+        <div *ngIf="editShopId === s.id">
+          <form [formGroup]="editForm" (ngSubmit)="submitEdit(s.id)">
+            <ion-item>
+              <ion-label position="floating">Dirección</ion-label>
+              <ion-input formControlName="address" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Teléfono</ion-label>
+              <ion-input formControlName="telephone" required></ion-input>
+            </ion-item>
+            <ion-button type="submit">Apply</ion-button>
+          </form>
+        </div>
       </ion-item>
     </ion-list>
   </div>

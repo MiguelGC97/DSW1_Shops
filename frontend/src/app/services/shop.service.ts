@@ -23,6 +23,7 @@ export class ShopService {
       'Content-Type': 'application/x-www-form-urlencoded'
     });
 
+    // Convertir los datos a formato x-www-form-urlencoded
     const body = new URLSearchParams();
     body.append("address", shopData.address);
     body.append("telephone", shopData.telephone);
@@ -35,6 +36,15 @@ export class ShopService {
   }
 
   update(id: any, updatedData: any){
-    return this.httpClient.put(`${this.endpoint}/${id}`, updatedData);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+
+    // Convertir los datos a formato x-www-form-urlencoded
+    const body = new URLSearchParams();
+    body.set("address", updatedData.address);
+    body.set("telephone", updatedData.telephone);
+
+    return this.httpClient.put(`${this.endpoint}/${id}`, body.toString(), { headers });
   }
 }

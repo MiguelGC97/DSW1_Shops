@@ -7,7 +7,7 @@ module.exports = app => {
 
     router.get("/", shops.findAll);
 
-    router.put("/", shops.update);
+    router.put("/:id", shops.update);
 
     router.delete("/:id", shops.delete);
 
